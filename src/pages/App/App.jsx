@@ -10,6 +10,10 @@ import { getUser } from '../../utilities/users-service';
 import Sidebar from '../../components/ProSideBar/ProSideBar'
 import CompVid from '../Comp Videos/CompVideos';
 import Videos from '../Videos/Videos';
+import Scheduling from '../Scheduling/Scheduling';
+import FAQ from '../FAQ/FAQ';
+import Seminar from '../Seminar/Seminar';
+import Shop from '../Shop/Shop';
 
 
 export default function App() {
@@ -18,19 +22,24 @@ export default function App() {
   return (
     <main className="App">
       { user ?
-        <>
+        <div className='container'>
           
-          <Sidebar></Sidebar>
-          <NavBar user={user} setUser={setUser}/>
+          <div className='sidebar'><Sidebar user={user} setUser={setUser}/></div>
           
-          <Routes>
-            <Route path="/compvideos" element={<CompVid />} />
-            <Route path="/videos" element={<Videos />} />
-            
+          
+          <div className='routes'><Routes>
+            <Route className="compvids" path="/compvideos" element={<CompVid />} />
+            <Route className="videos" path="/videos" element={<Videos />} />
+            <Route className="scheduling" path="/scheduling" element={<Scheduling />} /> 
+            <Route className="FAQ" path="/FAQ" element={<FAQ />} />
+            <Route className="Seminar" path="/Seminar" element={<Seminar />} />
+            <Route className="Shop" path="/Shop" element={<Shop />} />
+                       
             
           </Routes>
+          </div>
           
-        </>
+        </div>
         :
         <AuthPage setUser={setUser}/>
       }

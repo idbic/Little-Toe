@@ -8,7 +8,7 @@ export default function Videos() {
     
     return (
       <>
-        <h1>Jiu Jitsu Instructionals</h1>
+        <h1>Instructionals</h1>
         <button onClick={handleCheckToken}>console log date and time</button>
         </>
     );
