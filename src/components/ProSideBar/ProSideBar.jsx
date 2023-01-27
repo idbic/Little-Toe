@@ -15,10 +15,11 @@ export default function SideBar({user, setUser}) {
   }
 
   return (
-    <div style={{ display: 'flex', height: '100%' }}>
-    <Sidebar className='sidebar'>
+     
+      <div style={{ display: 'flex', height: '100%' }}>
+    <Sidebar defaultCollapsed={false} className='sidebar'>
   <Menu>
-    <MenuItem> <div onClick={() => collapseSidebar()}>Hey, {user.name}</div> </MenuItem>
+    <MenuItem> <div>Hey, {user.name}</div> </MenuItem>
     <SubMenu label="Media">
       <MenuItem component={<Link to="/videos"/>}> Videos </MenuItem>
       <MenuItem component={<Link to="/compvideos"/>}> Comp Videos </MenuItem>
@@ -31,6 +32,7 @@ export default function SideBar({user, setUser}) {
     <MenuItem component={<Link to="" onClick={handleLogOut}></Link>}> Log out</MenuItem>
   </Menu>
 </Sidebar>
+
 
 </div>
   );
