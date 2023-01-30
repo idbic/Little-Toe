@@ -22,7 +22,7 @@ export default function CompVid() {
         <Col 
           xs={{ span: 6 }} sm={{ span: 4 }} md={{ span: 3 }}
           lg={{ span: 2 }} xl={{ span: 1 }}
-        >{co.name}<YoutubeEmbed embedId={co.video}></YoutubeEmbed></Col>
+        >{co.name}<YoutubeEmbed embedId={co.video} width="300px"></YoutubeEmbed></Col>
       )}
     </Row>
 
